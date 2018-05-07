@@ -8,8 +8,6 @@ def uploadDatabase(file):
     list = matrix.tolist()
     # length = len( np.fromfile(file, float, -1 , ',') )
     # matrix = np.loadtxt(file, usecols=range(length), dtype=float, delimiter=',')
-    print (len(list))
-    print (len(list[0]))
     return (list)
 
 def KNN(k ,element, classes, vectors):
@@ -37,29 +35,36 @@ def KNN(k ,element, classes, vectors):
         distances[rowmin][columnmin] = 1000
         if max(scores) == k:
             break;
-    print(scores)
+    #print ("The scores are:")
+    #print(scores)
     category = classes[scores.index(max(scores))]
     return category
 
-def main():
+def classify(imgName):
     classes = []
     featuresMatrix = []
     for subdirectory in os.listdir("data"):
         directory = "data/" + subdirectory
         features = uploadDatabase(directory);
-        classes.append(subdirectory)
+        name, extension = subdirectory.split('.')
+        classes.append(name)
         featuresMatrix.append(features)
     #imgName = input("Ingrese la imagen a clasificar:")
-    imgName = "tuerca10.jpg"
+    #imgName = "tuerca13.jpg"
     image = cv2.imread(imgName, 0)
     if image is None:
-        print("Image not found")
+        pass
+        #print("Image not found")
     else:
-        print ("Image found")
+        #print ("Image found")
         procImage = im.imageProcessing(image).tolist()
         k = 3
         imageClass = KNN(k, procImage, classes, featuresMatrix)
-        print (imageClass)
+        #print ("Image category: %s" % imageClass)
+        return imageClass
+
+def main():
+    pass
 
 if __name__ == '__main__':
     main()
