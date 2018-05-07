@@ -1,4 +1,8 @@
 # Image classification using OpenCV
 ### Usage:
-´python3 training.py´
-´python3 imageClasification.py´ 
+
+####Training
+`python3 training.py`
+
+####Clasification
+`python3 imageClasification.py`
