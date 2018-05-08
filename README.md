@@ -2,13 +2,13 @@
 ## Usage:
 
 ### Training
-Need to save images in the training folder, then run the training file to obtain a feature database.
+Need to save images in the training folder in the same way as in the given example, then run the training.py file to obtain a feature database.
 
 `python3 training.py`
 
 ### Testing
 
-To test the performance of the training run test.py, its output will show the percentage of success.
+To test the performance of the training algorithm run test.py, its output will show the percentage of success for every defined class.
 
 `python3 test.py`
 
