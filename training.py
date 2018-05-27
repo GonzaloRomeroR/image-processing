@@ -14,7 +14,7 @@ def train():
             # Get image path
             imageName = subdirectory + str(j) + ".jpg"
             # Read the image using openCV
-            image = cv2.imread(path + "/" + imageName, 0)
+            image = cv2.imread(path + "/" + imageName)
             if image is None:
                 print("Image " + subdirectory + str(j) + ".jpg" +" not found")
             else:

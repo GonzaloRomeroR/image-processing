@@ -68,7 +68,7 @@ def classify(imgName):
     #imgName = input("Ingrese la imagen a clasificar:")
     #imgName = "tuerca13.jpg"
     # Read image
-    image = cv2.imread(imgName, 0)
+    image = cv2.imread(imgName)
     if image is None:
         pass
         #print("Image not found")
